@@ -1,0 +1,13 @@
+<div class="register-form">
+  <h3>Registrar Nuevo Usuario</h3>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div>
+      <input type="text" formControlName="username" placeholder="Usuario">
+    </div>
+    <div>
+      <input type="password" formControlName="password" placeholder="Contraseña">
+    </div>
+    <p *ngIf="mensajeRegistro" [class.error]="mensajeRegistro.includes('Error')">{{mensajeRegistro}}</p>
+    <button type="submit" [disabled]="registerForm.invalid">Registrar</button>
+  </form>
+</div>
